@@ -5,7 +5,7 @@ import Header from "Components/Header";
 import styles from "./App.module.scss";
 
 function App() {
-  const list = ["Home", "About", "Services"];
+  const list = ["Table", "Dashboard", "Charts"];
 
   return (
     <>
