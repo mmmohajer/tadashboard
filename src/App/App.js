@@ -1,8 +1,10 @@
 import React from "react";
 import cx from "classnames";
 
-import Header from "Components/Header";
 import styles from "./App.module.scss";
+
+import Header from "Components/Header";
+import AdminNav from "Components/AdminNav";
 
 function App() {
   const list = ["Table", "Dashboard", "Charts"];
@@ -11,7 +13,7 @@ function App() {
     <>
       <div>
         <Header NavList={list} />
-        <div className="bgThird w-per-100 height-px-200 bgThird"></div>
+        <AdminNav />
       </div>
       <div className="footer">Footer</div>
     </>

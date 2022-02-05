@@ -24,7 +24,7 @@ function Nav({ NavList }) {
     body.appendChild(newDiv);
   };
   return (
-    <>
+    <div>
       <div
         className={cx(
           "flex",
@@ -33,28 +33,6 @@ function Nav({ NavList }) {
           "flex--ai--center"
         )}
       >
-        <ul
-          className={cx(
-            "flex",
-            "flex--jc--start",
-            "flex--ai--center",
-            "show-flex-in-md-lg"
-          )}
-        >
-          {NavList.map((item, idx) => (
-            <li
-              key={idx}
-              className={cx(
-                "pr2",
-                "pl2",
-                idx < NavList.length - 1 && "br-right-solid-1"
-              )}
-            >
-              <Anchor>{item}</Anchor>
-            </li>
-          ))}
-        </ul>
-
         <div
           className={cx(
             "flex",
@@ -191,7 +169,7 @@ function Nav({ NavList }) {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

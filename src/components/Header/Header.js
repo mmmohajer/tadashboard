@@ -12,7 +12,7 @@ const Header = ({ NavList }) => {
       className={cx(
         "w-per-100",
         "flex",
-        "flex--jc--start",
+        "flex--jc--between",
         "flex--ai--center",
         "p2",
         "pos-rel",
