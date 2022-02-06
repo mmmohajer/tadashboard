@@ -1,7 +1,7 @@
 import React from "react";
 
-const years = ["2021", "2022"];
-const areas = { 2021: ["area1", "area2"], 2022: ["area3", "area4"] };
+const years = ["2022", "2023"];
+const areas = { 2022: ["area1", "area2"], 2023: ["area3", "area4"] };
 const plants = {
   area1: ["plant1", "plant2"],
   area2: ["plant3", "plant4"],

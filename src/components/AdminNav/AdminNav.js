@@ -18,15 +18,20 @@ function AdminNav() {
           "w-per-20",
           "bgFourth",
           "textBlack",
+          "bg-Purple",
           "height-vh-full",
           styles.adminNavContainer
         )}
       >
         {menuList.map((item, idx) => (
-          <li className="p2 mouse-hand" key={idx}>
+          <li className="p2 mouse-hand hover-text-white" key={idx}>
             {item}
           </li>
         ))}
+        <div className="mt-2 p2 bg-red f-b">
+          Hierarchy
+          <hr></hr>
+          </div>
         <TreeView />
       </ul>
     </>
