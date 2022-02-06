@@ -16,9 +16,8 @@ function AdminNav() {
           "flex--dir--col",
           "flex--ai--start",
           "w-per-20",
-          "bgFourth",
+          "bgPurple",
           "textBlack",
-          "bg-Purple",
           "height-vh-full",
           styles.adminNavContainer
         )}
