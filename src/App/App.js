@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <div>
-        <Header NavList={list} />
         <AdminNav />
       </div>
       <div className="footer">Footer</div>
