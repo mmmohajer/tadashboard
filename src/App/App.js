@@ -26,7 +26,7 @@ function App() {
             frame === "Charts" && <Charts />
           }
           {
-            frame === "Data Table" && <Datatable />
+            frame === "Data Table" && <Datatable  />
           }
         </div>
       </div>
