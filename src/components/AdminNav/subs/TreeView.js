@@ -1,10 +1,10 @@
 import React from "react";
 
 const years = ["2022", "2023"];
-const areas = { 2022: ["area1", "area2"], 2023: ["area3", "area4"] };
+const areas = { 2022: ["GP", "FSJ"], 2023: ["area3", "area4"] };
 const plants = {
-  area1: ["plant1", "plant2"],
-  area2: ["plant3", "plant4"],
+  GP: ["plant1", "plant2"],
+  FSJ: ["plant3", "plant4"],
   area3: ["plant5", "plant6"],
   area4: ["plant7", "plant8"],
 };
@@ -24,13 +24,13 @@ function TreeView() {
   };
 
   return (
-    <div className="pl2">
+    <div className=" w-per-100">
       {years.map((year, yearIdx) => (
         <div key={yearIdx} className="">
-          <div className="pb2 mouse-hand" onClick={treeViewParentClickHandler}>
+          <div className="p1 w-per-100 mouse-hand hover-text-primary" onClick={treeViewParentClickHandler}>
             {year}
           </div>
-          <div className="no-display">
+          <div className="no-display ">
             {areas[year].map((area, areaIdx) => (
               <div key={areaIdx} className="">
                 <div

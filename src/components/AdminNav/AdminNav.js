@@ -3,11 +3,11 @@ import cx from "classnames";
 
 import styles from "./AdminNav.module.scss";
 
-const menuList = ["Dashboard", "Charts", "Table"];
+const menuList = ["Dashboard", "Charts", "Data Table"];
 
 import TreeView from "./subs/TreeView";
 
-function AdminNav() {
+function AdminNav({setFrame}) {
   return (
     <>
       <ul
@@ -16,22 +16,30 @@ function AdminNav() {
           "flex--dir--col",
           "flex--ai--start",
           "w-per-20",
-          "bgPurple",
-          "textBlack",
+          "w-min-px-300",
+          "bgSpecialblue",
+          "textBlue",
           "height-vh-full",
-          styles.adminNavContainer
+          "pos-fix",
+          "overflow-y-auto",
+          "textWhite"
         )}
       >
+        <li className="p2 f-b fs-px-26 w-per-100" >CNRL TA Dashboard</li>
         {menuList.map((item, idx) => (
-          <li className="p2 mouse-hand hover-text-white" key={idx}>
+          <li className="p2 f-b mouse-hand w-per-100 hover-text-primary" key={idx} onClick={() => setFrame(item)}>
             {item}
           </li>
         ))}
-        <div className="mt-2 p2 bg-red f-b">
+        <div className="mt2 p1 bgBlack f-b br-bottom-solid-1 br-top-solid-1 w-per-100 mb2">
           Hierarchy
-          <hr></hr>
           </div>
         <TreeView />
+
+        <div class="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1">
+                        <div class="small">Logged in as:Admin</div>
+                        
+         </div>
       </ul>
     </>
   );

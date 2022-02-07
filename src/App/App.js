@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import cx from "classnames";
 
 import styles from "./App.module.scss";
@@ -9,16 +9,26 @@ import Charts from "Components/Charts";
 import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
 function App() {
-  const list = ["DataTable", "Dashboard", "Charts"];
+  const [frame, setFrame] = useState("Dashboard")
 
   return (
     <>
-      <div>
+      <div className="flex">
        {/* <Header />  */}
-        <AdminNav />
-        <Charts />
-        <Datatable />
-        <Dashboard />
+       <div className={cx(styles.adminNavContainer)}>
+        <AdminNav setFrame={setFrame} />
+        </div>
+        <div className="w-per-100">
+          {
+            frame === "Dashboard" && <Dashboard />
+          }
+          {
+            frame === "Charts" && <Charts />
+          }
+          {
+            frame === "Data Table" && <Datatable />
+          }
+        </div>
       </div>
       <div className="footer">Footer</div>
     </>
