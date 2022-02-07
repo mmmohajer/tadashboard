@@ -40,10 +40,14 @@ function datatable(){
     //     })}
     //   </tbody>
     // </table>
-
+    <>
+    <div>
+    <h1 class="p2 mt-4">Datatable</h1>
+    </div>
         <div>
             <Dataform />
         </div>
+        </>
        
     
     );

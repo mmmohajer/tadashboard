@@ -15,6 +15,7 @@
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-weight: bold;
 }
 
 .cardbody {
@@ -26,4 +27,21 @@
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  --bs-text-opacity: 1;
+  color: #6c757d !important;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  float: center;
+  border: solid black;
+  transition: all 1s;
+  width: 500px;
+  height: auto;
+  margin: 10px;
 }
