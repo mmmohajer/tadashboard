@@ -1,0 +1,26 @@
+$brColor: rgba(0, 0, 0, 0.125);
+$bgColor: rgba(0, 0, 0, 0.03);
+
+%box {
+  background-color: $bgColor;
+  border-color: $brColor;
+}
+
+.card {
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-color: $brColor;
+  border-radius: 0.25rem;
+}
+
+.cardheader {
+  @extend %box;
+}
+
+.cardbody {
+  flex: 1 1 auto;
+}
+
+.cardfooter {
+  @extend %box;
+}

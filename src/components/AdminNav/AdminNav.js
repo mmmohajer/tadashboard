@@ -7,7 +7,7 @@ const menuList = ["Dashboard", "Charts", "Data Table"];
 
 import TreeView from "./subs/TreeView";
 
-function AdminNav({setFrame}) {
+function AdminNav({ setFrame }) {
   return (
     <>
       <ul
@@ -25,21 +25,24 @@ function AdminNav({setFrame}) {
           "textWhite"
         )}
       >
-        <li className="p2 f-b fs-px-26 w-per-100" >CNRL TA Dashboard</li>
+        <li className="p2 f-b fs-px-26 w-per-100">CNRL TA Dashboard</li>
         {menuList.map((item, idx) => (
-          <li className="p2 f-b mouse-hand w-per-100 hover-text-primary" key={idx} onClick={() => setFrame(item)}>
+          <li
+            className="p2 f-b mouse-hand w-per-100 hover-text-primary"
+            key={idx}
+            onClick={() => setFrame(item)}
+          >
             {item}
           </li>
         ))}
         <div className="mt2 p1 bgBlack f-b br-bottom-solid-1 br-top-solid-1 w-per-100 mb2">
           Hierarchy
-          </div>
+        </div>
         <TreeView />
 
-        <div class="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1">
-                        <div class="small">Logged in as:Admin</div>
-                        
-         </div>
+        <div className="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1">
+          <div className="small">Logged in as:Admin</div>
+        </div>
       </ul>
     </>
   );
