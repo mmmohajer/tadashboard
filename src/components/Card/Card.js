@@ -35,6 +35,7 @@ function Card({ children, cardHeader, cardFooter }) {
           "pl2",
           "pr2",
           "br-bottom-solid-1",
+          
           styles.cardfooter
         )}
       >
