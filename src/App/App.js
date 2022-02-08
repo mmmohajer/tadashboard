@@ -13,10 +13,12 @@ function App() {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex pos-rel">
         {/* <Header />  */}
         <div className={cx(styles.adminNavContainer)}>
+          
           <AdminNav setFrame={setFrame} />
+          
         </div>
         <div className="w-per-100">
           {frame === "Dashboard" && <Dashboard />}

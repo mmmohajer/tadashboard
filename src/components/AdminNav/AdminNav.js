@@ -15,16 +15,20 @@ function AdminNav({ setFrame }) {
           "flex",
           "flex--dir--col",
           "flex--ai--start",
-          "w-per-20",
-          "w-min-px-300",
+          // "w-per-20",
+          // "w-min-px-300",
           "bgSpecialblue",
           "textBlue",
           "height-vh-full",
           "pos-fix",
+          "pos-fx--lt",
           "overflow-y-auto",
-          "textWhite"
+          "textWhite",
+          styles.adminNavContainer
         )}
       >
+        <div className="flex flex--dir--col flex--jc--between w-per-100  height-vh-full">
+        <div>
         <li className="p2 f-b fs-px-26 w-per-100">CNRL TA Dashboard</li>
         {menuList.map((item, idx) => (
           <li
@@ -39,11 +43,13 @@ function AdminNav({ setFrame }) {
           Hierarchy
         </div>
         <TreeView />
-
-        <div className="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1">
-          <div className="small">Logged in as:Admin</div>
         </div>
+        </div>
+        <div className="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1 ">
+          <div className="small">Logged in as:Admin</div>
+      </div>
       </ul>
+      
     </>
   );
 }

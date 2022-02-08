@@ -12,7 +12,7 @@ function Charts() {
       <h1 className="p2 mt-4">Charts</h1>
       <div className="p2 pt6 row ">
         {cardContents.map((content, idx) => (
-          <div className="row--12 row--sm--12 row--md--6 row--lg--6">
+          <div className="row--12 row--sm--12 row--md--6 row--lg--6 ">
             <Card
               key={idx}
               cardHeader={content.header}
