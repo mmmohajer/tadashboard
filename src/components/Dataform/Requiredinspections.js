@@ -1,45 +1,49 @@
 import React ,{Component} from "react";
 import cx from "classnames";
-const inspectionstatus = ["Started", "Completed", "Not Started","Canceled"];
-const inspectionmethods = ["VE", "VI", "UT","AUT","Ex. MT", "Int. MT", "PT","Tublar","hydro"];
+import styles from "./Dataform.module.scss";
+const inspectionstatus = ["","Started", "Completed", "Not Started","Canceled"];
+const inspectionmethods = ["VE", "VI", "UT","AUT","Ex. MT", "Int. MT", "PT","Tublar","Hydrotest"];
 
-function Requiredinspections({ children, cardHeader, cardFooter }) {
+function Requiredinspections() {
     return (
         <>
         
-        <div class="row mb-2"> 
-                <div class="col-sm-2"><strong>Inspection Method</strong></div>
-                <div class="col-sm-4"><strong>Scope</strong></div>
-                <div class="col-sm-1"><strong>Status</strong></div>
-                <div class="col-sm-2"><strong>Completion Date</strong></div>
-                <div class="col-sm-3"><strong>Note</strong></div>
-            </div>
-
+        <div class="row mb1"> 
+                <div class="col-sm-2">Inspection Method</div>
+                <div class="col-sm-3  ml1">Scope</div>
+                <div class="col-sm-1_5  ml1">Status</div>
+                <div class="col-sm-2  ml1">Completion Date</div>
+                <div class="col-sm-3  ml1">Note</div>
+        </div>
+        <hr></hr>
+        <br></br>
             {inspectionmethods.map((item,idx)=>(
-            <div class="row mb-2">  
-                    <div class="col-sm-2">
-                    <input className={cx("p2")} key={idx} type="checkbox" value={item}></input>
-                    <label for="VE">{item}</label>
+            <div class="row mb1 ">  
+                   
+                    <div className="col-sm-2">
+                        <input key={idx} type="checkbox"  ></input>
+                        <label for="VE">{item}</label>
                     </div>
 
-                    <div class="col-sm-4">
-                    <input  class="form-control" type="text" id="VIdes"  name="VI"></input>
-                </div>
-                <div class="col-sm-1"> 
-                    <select name="vistatus" class="form-control ml2">
+                    <div className="col-sm-3 ml1">
+                        <input  class={cx(styles.formcontrol)} type="text" id="VIdes"  name="VI"></input>
+                    </div>
+
+                    <div className="col-sm-1_5 ml1"> 
+                    <select name="vistatus" class={cx(styles.formcontrol)}>
                     {inspectionstatus.map((item, idx) => (
                         <option key={idx} >
                             {item}
                         </option>
                     ))}
                     </select>
-                </div>
-                <div class="col-sm-2">
-                   <input class="form-control" type="Date" id="inscompdate" name="inscompdate"></input>
-                </div>
-                <div class="col-sm-3">
-                    <input  class="form-control" type="text" id="VIdes"  name="VI"></input>
-                </div>
+                    </div>
+                    <div className="col-sm-2 ml1">
+                         <input className={cx(styles.formcontrol)} type="Date"  name="inscompdate"></input>
+                    </div>
+                    <div className="col-sm-3 ml1">
+                        <input  className={cx(styles.formcontrol)} type="text"  name="Notes"></input>
+                    </div>
             </div>
             ))} 
         </>

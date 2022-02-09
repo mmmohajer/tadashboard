@@ -1,8 +1,10 @@
 import React from "react";
 import cx from "classnames";
+import styles from "./Dataform.module.scss";
 import Datacard from "Components/Datacard";
 import { datacardContents } from "./utils";
 import Generaldata from "./Generaldata";
+import History from "./History";
 import Inspectionstatus from "./Inspectionstatus";
 import Requiredinspections from "./Requiredinspections";
 import Image from "./Image";
@@ -23,8 +25,9 @@ function Dataform(){
             <>
               {idx === 0 && <Image / >}
               {idx === 1 && <Generaldata />}
-              {idx === 2 && <Requiredinspections />}
-              {idx === 3 && <Inspectionstatus />}
+              {idx === 2 && <History />}
+              {idx === 3 && <Requiredinspections />}
+              {idx === 4 && <Inspectionstatus />}
             </>
           </Datacard>
         </div>
