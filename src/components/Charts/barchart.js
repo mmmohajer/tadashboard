@@ -2,22 +2,25 @@ import React , {Component} from "react";
 import { Doughnut , Bar , Pie , Line } from 'react-chartjs-2';
 
 
-function barchart () {
+
+class  barchart extends Component () {
 constructor(props){
     super(props); 
     this.state={
       chartData:props.chartData  
       }
     };
-  }
+  
+
+  
+render(){
 
   const defaultprops={
     displayTitle:false,
     displayLegend:true,
     legendPosition:'right'
-    
     }
-
+    
     return (
     <Bar>
           data={this.state.chartData}
@@ -31,7 +34,8 @@ constructor(props){
             }
             }}
     </Bar> 
-    )
+    );
         }
+  }
 
     export default barchart;
