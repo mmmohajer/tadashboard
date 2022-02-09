@@ -1,6 +1,5 @@
 import React from "react";
 import cx from "classnames";
-
 import styles from "./Card.module.scss";
 
 function Card({ children, cardHeader, cardFooter }) {

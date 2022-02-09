@@ -2,8 +2,9 @@ import React from "react";
 import cx from "classnames";
 
 import styles from "./AdminNav.module.scss";
+// import "./AdminNav.scss"
 
-const menuList = ["Dashboard", "Charts", "Data Table"];
+const menuList = ["Dashboard", "Charts", "Datatable"];
 
 import TreeView from "./subs/TreeView";
 
@@ -35,14 +36,17 @@ function AdminNav({ setFrame }) {
             className="p2 f-b mouse-hand w-per-100 hover-text-primary"
             key={idx}
             onClick={() => setFrame(item)}
+           
           >
             {item}
           </li>
         ))}
-        <div className="mt2 p1 bgBlack f-b br-bottom-solid-1 br-top-solid-1 w-per-100 mb2">
+        <div className="mt2 p1 bgBlack f-b br-bottom-solid-1 br-top-solid-1 w-per-100 ml1">
           Hierarchy
         </div>
+        <li className="p1">
         <TreeView />
+        </li>
         </div>
         </div>
         <div className="p1 w-per-100 bgSilver textPrimary br-bottom-solid-1 br-top-solid-1 ">

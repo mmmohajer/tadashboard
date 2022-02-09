@@ -3,7 +3,7 @@ import { useTable } from "react-table";
 import cx from "classnames";
 import Dataform from "Components/Dataform";
 
-function datatable(){
+function Datatable(){
     // const {
     //     getTableProps,
     //     getTableBodyProps,
@@ -47,10 +47,10 @@ function datatable(){
         <div>
             <Dataform />
         </div>
-        </>
+    </>
        
     
     );
     }
     
-    export default datatable;
+    export default Datatable;
