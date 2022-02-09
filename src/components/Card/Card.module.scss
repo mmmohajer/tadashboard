@@ -15,6 +15,7 @@ $bgColor: rgba(0, 0, 0, 0.03);
 
 .cardheader {
   @extend %box;
+  font-weight: bold;
 }
 
 .cardbody {

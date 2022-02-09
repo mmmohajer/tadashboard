@@ -10,6 +10,7 @@ function Card({ children, cardHeader, cardFooter }) {
         "flex",
         "flex--dir--col",
         "bgWhite br-all-solid-1",
+        "m1",
         styles.card
       )}
     >
@@ -34,7 +35,6 @@ function Card({ children, cardHeader, cardFooter }) {
           "pl2",
           "pr2",
           "br-bottom-solid-1",
-          
           styles.cardfooter
         )}
       >

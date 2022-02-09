@@ -1,0 +1,27 @@
+$brColor: rgba(0, 0, 0, 0.125);
+$bgColor: rgba(0, 0, 0, 0.03);
+
+%box {
+  background-color: $bgColor;
+  border-color: $brColor;
+}
+
+.datacard {
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-color: $brColor;
+  border-radius: 0.25rem;
+}
+
+.datacardheader {
+  @extend %box;
+  font-weight: bold;
+}
+
+.datacardbody {
+  flex: 1 1 auto;
+}
+
+.datacardfooter {
+  @extend %box;
+}
