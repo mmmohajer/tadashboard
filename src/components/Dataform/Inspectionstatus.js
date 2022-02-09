@@ -7,8 +7,10 @@ const importantdates=["Inspection Completion Date","Cleaning Date","Opening Date
 function Inspectionstatus() {
     return (
         <>
-            <div className="row mb-2">
-                    <label  for="opendate" className="col-sm-2 col-form-label"> Inspection Status:</label>
+            <div className="row mb1">
+                    <div className="col-sm-3">
+                        <label  for="opendate" className="col-sm-2 col-form-label"> Inspection Status:</label>
+                    </div>
                     <div className="col-sm-2">
                         <select className={cx(styles.formcontrol)} name="inspectionstatus">
                         {inspectionstatus.map((item, idx) => (
@@ -21,10 +23,13 @@ function Inspectionstatus() {
             </div>
 
             {importantdates.map((item1,idx1)=>(
-
-                <div class="col-sm-2">
-                    <label for={item1} className={cx(styles.formcontrol)}>{item1}</label>
-                   <input key={idx1} className={cx(styles.formcontrol)} type="Date"  ></input>
+                <div className="row mb1">
+                    <div class="col-sm-3">
+                        <label for={item1} >{item1}</label>
+                    </div>
+                    <div class="col-sm-2">
+                    <input key={idx1} className={cx(styles.formcontrol,"p1")} type="Date"  ></input>
+                    </div>
                 </div>
 
             ))}

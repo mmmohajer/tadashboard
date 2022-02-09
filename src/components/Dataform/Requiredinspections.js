@@ -22,7 +22,7 @@ function Requiredinspections() {
                    
                     <div className="col-sm-2">
                         <input key={idx} type="checkbox"  ></input>
-                        <label for="VE">{item}</label>
+                        <label className="ml1" for="VE">{item}</label>
                     </div>
 
                     <div className="col-sm-3 ml1">
@@ -39,7 +39,7 @@ function Requiredinspections() {
                     </select>
                     </div>
                     <div className="col-sm-2 ml1">
-                         <input className={cx(styles.formcontrol)} type="Date"  name="inscompdate"></input>
+                         <input className={cx(styles.formcontrol, "p1")} type="Date"  name="inscompdate"></input>
                     </div>
                     <div className="col-sm-3 ml1">
                         <input  className={cx(styles.formcontrol)} type="text"  name="Notes"></input>
