@@ -6,22 +6,22 @@ $bgColor: rgba(0, 0, 0, 0.03);
   border-color: $brColor;
 }
 
-.card {
+.datacard {
   word-wrap: break-word;
   background-clip: border-box;
   border-color: $brColor;
   border-radius: 0.25rem;
 }
 
-.cardheader {
+.datacardheader {
   @extend %box;
   font-weight: bold;
 }
 
-.cardbody {
+.datacardbody {
   flex: 1 1 auto;
 }
 
-.cardfooter {
+.datacardfooter {
   @extend %box;
 }

@@ -1,0 +1,33 @@
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  float: center;
+  border: solid black;
+  transition: all 1s;
+  width: 500px;
+  height: auto;
+  margin: 10px;
+}
+
+.formcontrol {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+// .formcontrol :focus {
+//   border: 3px solid #044485;
+// }

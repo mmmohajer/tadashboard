@@ -1,6 +1,5 @@
 import React from "react";
 import cx from "classnames";
-
 import styles from "./Card.module.scss";
 
 function Card({ children, cardHeader, cardFooter }) {
@@ -11,6 +10,7 @@ function Card({ children, cardHeader, cardFooter }) {
         "flex",
         "flex--dir--col",
         "bgWhite br-all-solid-1",
+        "m1",
         styles.card
       )}
     >
