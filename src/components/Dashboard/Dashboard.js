@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import Card from "Components/Card";
-import Barchart from "Components/Chartload/AppChart";
+import Appchart from "Components/Chartload/AppChart";
 import {
   InspectionMethodsStatus,
   VIStatus,
@@ -23,14 +23,14 @@ function dashboard() {
               cardHeader={content.Header}
               cardFooter={content.Footer}
             >
-              <>
+              <div className="w-max-px-400 ml-auto mr-auto">
                 {idx === 0 && (
-                  <Barchart charttype={"Pie"} data={InspectionMethodsStatus} />
+                  <Appchart charttype={"Pie"} data={InspectionMethodsStatus} />
                 )}
-                {idx === 1 && <Barchart charttype={"Pie"} data={VIStatus} />}
-                {idx === 2 && <Barchart charttype={"Pie"} data={VEStatus} />}
-                {idx === 3 && <Barchart charttype={"Pie"} data={UTStatus} />}
-              </>
+                {idx === 1 && <Appchart charttype={"Pie"} data={VIStatus} />}
+                {idx === 2 && <Appchart charttype={"Pie"} data={VEStatus} />}
+                {idx === 3 && <Appchart charttype={"Pie"} data={UTStatus} />}
+              </div>
             </Card>
           </div>
         ))}

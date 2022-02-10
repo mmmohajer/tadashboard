@@ -25,14 +25,14 @@ function Charts() {
               cardHeader={content.Header}
               cardFooter={content.Footer}
             >
-              <>
+              <div className="w-max-px-400 ml-auto mr-auto">
                 {idx === 0 && (
                   <Barchart charttype={"Bar"} data={InspectionMethodsStatus} />
                 )}
                 {idx === 1 && <Barchart charttype={"Bar"} data={VIStatus} />}
                 {idx === 2 && <Barchart charttype={"Bar"} data={VEStatus} />}
                 {idx === 3 && <Barchart charttype={"Bar"} data={UTStatus} />}
-              </>
+              </div>
             </Card>
           </div>
         ))}
