@@ -38,11 +38,7 @@ function AdminNav({ setFrame }) {
             className="w-px-30 height-px-30 bgSilver mb2 br-rad-per-50 flex flex--jc--center flex--ai--center textBlack mouse-hand"
             onClick={closeAdminNav}
           >
-
-           
-
             <LeftArrow style={{ transform: "scale(1.25)" }} />
-
           </div>
           <div className="bgSilver w-per-100 text-center p1 textBlack">
             Login as admin
