@@ -14,8 +14,28 @@
   z-index: 100;
 }
 
-.averflow-y-auto {
+.of-x-auto {
+  overflow-x: auto;
+}
+
+.of-y-auto {
   overflow-y: auto;
+}
+
+.of-x-scroll {
+  overflow-x: scroll;
+}
+
+.of-y-scroll {
+  overflow-y: scroll;
+}
+
+.of-x-hidden {
+  overflow-x: hidden;
+}
+
+.of-y-hidden {
+  overflow-y: hidden;
 }
 
 .z-1000 {

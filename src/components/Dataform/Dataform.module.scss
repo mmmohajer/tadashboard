@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-img {
+.img {
   float: center;
   border: solid black;
   transition: all 1s;
@@ -32,3 +32,8 @@ img {
 // .formcontrol :focus {
 //   border: 3px solid #044485;
 // }
+
+.inspectionCardContainer {
+  min-width: 1000px;
+  overflow-x: auto;
+}

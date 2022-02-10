@@ -9,33 +9,30 @@ import Inspectionstatus from "./Inspectionstatus";
 import Requiredinspections from "./Requiredinspections";
 import Image from "./Image";
 
-
-function Dataform(){
-    return (
+function Dataform() {
+  return (
     <>
-   
-    <div className="p2 pt6 row ">
-      {datacardContents.map((content, idx) => (
-        <div className="row--12 row--sm--12 row--md--6 row--lg--12 ">
-          <Datacard
-            key={idx}
-            cardHeader={content.Header}
-            cardFooter={content.Footer}
-          >
-            <>
-              {idx === 0 && <Image / >}
-              {idx === 1 && <Generaldata />}
-              {idx === 2 && <History />}
-              {idx === 3 && <Requiredinspections />}
-              {idx === 4 && <Inspectionstatus />}
-            </>
-          </Datacard>
-        </div>
-      ))}
-     
-    </div>
-  </>
-);
-    }
-    
-    export default Dataform;
+      <div className="p2 pt6 row">
+        {datacardContents.map((content, idx) => (
+          <div className="row--12 row--sm--12 row--md--12 row--lg--12 ">
+            <Datacard
+              key={idx}
+              cardHeader={content.Header}
+              cardFooter={content.Footer}
+            >
+              <>
+                {idx === 0 && <Image />}
+                {idx === 1 && <Generaldata />}
+                {idx === 2 && <History />}
+                {idx === 3 && <Requiredinspections />}
+                {idx === 4 && <Inspectionstatus />}
+              </>
+            </Datacard>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default Dataform;
