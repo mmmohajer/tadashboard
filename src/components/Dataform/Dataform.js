@@ -24,7 +24,11 @@ function Dataform() {
                 {idx === 0 && <Image />}
                 {idx === 1 && <Generaldata />}
                 {idx === 2 && <History />}
-                {idx === 3 && <Requiredinspections />}
+                {idx === 3 && (
+                  <div className="w-per-100 of-x-auto">
+                    <Requiredinspections />
+                  </div>
+                )}
                 {idx === 4 && <Inspectionstatus />}
               </>
             </Datacard>

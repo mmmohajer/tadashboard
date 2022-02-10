@@ -33,3 +33,8 @@
     max-width: #{$val}px;
   }
 }
+
+.w-inherit {
+  width: inherit;
+  max-width: inherit;
+}

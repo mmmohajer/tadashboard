@@ -1,0 +1,15 @@
+$adminNavTransition: all ease-in 0.3s;
+
+.adminNavContainer {
+  transition: $adminNavTransition;
+}
+
+.rightSideContainer {
+  margin-left: 200px;
+  transition: $adminNavTransition;
+}
+
+.navOpener {
+  transition: $adminNavTransition;
+  margin-left: -40px;
+}

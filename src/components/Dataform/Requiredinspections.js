@@ -22,7 +22,7 @@ const inspectionmethods = [
 
 function Requiredinspections() {
   return (
-    <div>
+    <div className={cx(styles.inspectionCardContainer)}>
       <div class="row mb1">
         <div class="col-sm-2">Inspection Method</div>
         <div class="col-sm-3  ml1">Scope</div>

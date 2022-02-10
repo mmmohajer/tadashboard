@@ -8,6 +8,7 @@ import AdminNav from "Components/AdminNav";
 import Charts from "Components/Charts";
 import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
+import NavOpener from "Components/AdminNav/NavOpener";
 
 const App = () => {
   
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <div className="flex w-per-100">
         <div className="w-per-20 bgBlack height-vh-full">
           <AdminNav setFrame={setFrame} />
@@ -28,7 +30,15 @@ const App = () => {
           {frame === "Charts" && <Charts />}
           {frame === "Datatable" && <Datatable />}
         </div>
+=======
+      <AdminNav setFrame={setFrame} />
+      <div className="rightSideContainer" id="righSideContainer">
+        {frame === "Dashboard" && <Dashboard />}
+        {frame === "Charts" && <Charts />}
+        {frame === "Datatable" && <Datatable />}
+>>>>>>> 817d6ec94d37b6b1149d3e7645418aee607bf007
       </div>
+      <NavOpener />
     </>
   );
 };
