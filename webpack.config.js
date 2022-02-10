@@ -53,6 +53,10 @@ let config = {
         },
       },
       {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
+      {
         test: /\.(jpe?g|gif|png|svg)$/i,
         include: path.join(__dirname, "src/assets/images/js-Images"),
         use: [
