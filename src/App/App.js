@@ -8,21 +8,19 @@ import AdminNav from "Components/AdminNav";
 import Charts from "Components/Charts";
 import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
+import NavOpener from "Components/AdminNav/NavOpener";
 
 const App = () => {
   const [frame, setFrame] = useState("Datatable");
   return (
     <>
-      <div className="flex w-per-100">
-        <div className="w-per-30 bgBlack height-vh-full">
-          <AdminNav setFrame={setFrame} />
-        </div>
-        <div className="w-per-70">
-          {frame === "Dashboard" && <Dashboard />}
-          {frame === "Charts" && <Charts />}
-          {frame === "Datatable" && <Datatable />}
-        </div>
+      <AdminNav setFrame={setFrame} />
+      <div className="rightSideContainer" id="righSideContainer">
+        {frame === "Dashboard" && <Dashboard />}
+        {frame === "Charts" && <Charts />}
+        {frame === "Datatable" && <Datatable />}
       </div>
+      <NavOpener />
     </>
   );
 };
