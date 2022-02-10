@@ -10,14 +10,20 @@ import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
 
 const App = () => {
-  const [frame, setFrame] = useState("Datatable");
+  
+  
+
+  const [frame, setFrame] = useState("Dashboard");
+  
+
+
   return (
     <>
       <div className="flex w-per-100">
-        <div className="w-per-30 bgBlack height-vh-full">
+        <div className="w-per-20 bgBlack height-vh-full">
           <AdminNav setFrame={setFrame} />
         </div>
-        <div className="w-per-70">
+        <div className="w-per-80">
           {frame === "Dashboard" && <Dashboard />}
           {frame === "Charts" && <Charts />}
           {frame === "Datatable" && <Datatable />}

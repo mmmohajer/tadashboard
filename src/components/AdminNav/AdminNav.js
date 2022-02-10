@@ -11,7 +11,10 @@ const menuList = ["Dashboard", "Charts", "Datatable"];
 function AdminNav({ setFrame }) {
   return (
     <>
-      <div className="w-per-30 bgSpecialblue height-vh-full pos-fix flex flex--dir--col flex--jc--start textWhite of-y-auto">
+      <div className="w-per-20 bgSpecialblue height-vh-full pos-fix flex flex--dir--col flex--jc--start textWhite of-y-auto">
+        <div className="p2 f-b fs-px-26">
+          CNRL TA  Dahboard
+        </div>
         {menuList.map((item, idx) => (
           <div
             key={idx}

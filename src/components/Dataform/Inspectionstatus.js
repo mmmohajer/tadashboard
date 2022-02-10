@@ -23,12 +23,12 @@ function Inspectionstatus() {
             </div>
 
             {importantdates.map((item1,idx1)=>(
-                <div className="row mb1">
+                <div key={idx1} className="row mb1">
                     <div class="col-sm-3">
                         <label for={item1} >{item1}</label>
                     </div>
                     <div class="col-sm-2">
-                    <input key={idx1} className={cx(styles.formcontrol,"p1")} type="Date"  ></input>
+                    <input  className={cx(styles.formcontrol,"p1")} type="Date"  ></input>
                     </div>
                 </div>
 

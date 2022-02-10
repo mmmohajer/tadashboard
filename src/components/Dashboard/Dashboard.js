@@ -1,6 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import Card from "Components/Card";
+import Barchart from "Components/Charts/Barchart";
 import { cardContents1 } from "./utils";
 
 function dashboard() {
@@ -17,10 +18,10 @@ function dashboard() {
               cardFooter={content.Footer}
             >
               <>
-                {idx === 0 && <p>Grapph1</p>}
-                {idx === 1 && <p>Graph2</p>}
-                {idx === 2 && <p>Graph3</p>}
-                {idx === 3 && <p>Graph4</p>}
+              {idx === 0 && <Barchart />}
+                {idx === 1 && <Barchart />}
+                {idx === 2 && <Barchart />}
+                {idx === 3 && <Barchart />}
               </>
             </Card>
           </div>

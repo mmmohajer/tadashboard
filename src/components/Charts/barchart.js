@@ -1,41 +1,38 @@
-import React , {Component} from "react";
-import { Doughnut , Bar , Pie , Line } from 'react-chartjs-2';
+import React  from "react";
+import {Chart as ChartJS} from 'chart.js/auto'
+import { Bar,Pie } from 'react-chartjs-2';
 
 
 
-class  barchart extends Component () {
-constructor(props){
-    super(props); 
-    this.state={
-      chartData:props.chartData  
-      }
-    };
+
+
+
+
+const Barchart= ()=> {
   
 
-  
-render(){
 
-  const defaultprops={
-    displayTitle:false,
-    displayLegend:true,
-    legendPosition:'right'
-    }
-    
     return (
-    <Bar>
-          data={this.state.chartData}
-          width={100}
-          height={50}
-          option={{
-            maintainAspectRatio:false,
-            legend:{
-              display:thid.defaultprops.displayLegend,
-              position:thid.defaultprops.legendPosition
-            }
-            }}
-    </Bar> 
+     <div>
+      <Pie
+          data={{
+            labels: ["Innitiated", "Not Started1", "Canceled", "Completed"],
+            datasets:[
+              {
+                label:["Innitiated", "Not Started1", "Canceled", "Completed"],
+                data:[12.21, 4, 11.25, 50],
+                backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+              }
+            ]
+          }}
+          width={80}
+          height={40}
+          
+     /> 
+     </div>
+     
     );
-        }
+       
   }
 
-    export default barchart;
+    export default Barchart;

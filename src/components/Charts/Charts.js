@@ -2,7 +2,7 @@ import React ,{Component} from "react";
 import cx from "classnames";
 import styles from "./Charts.module.scss";
 import Card from "Components/Card";
-// import Barchart from "./barchart";
+import Barchart from "./Barchart";
 import { Doughnut , Bar , Pie , Line } from 'react-chartjs-2';
 
 import { cardContents } from "./utils";
@@ -10,7 +10,7 @@ import { cardContents } from "./utils";
 
 
 
-function Charts () {s
+function Charts () {
   
   return (
     <>
@@ -24,10 +24,10 @@ function Charts () {s
               cardFooter={content.Footer}
             >
               <>
-                {/* {idx === 0 && <Barchart />} */}
-                {idx === 1 && <p>Graph2</p>}
-                {idx === 2 && <p>Graph3</p>}
-                {idx === 3 && <p>Graph4</p>}
+                {idx === 0 && <Barchart />}
+                {idx === 1 && <Barchart />}
+                {idx === 2 && <Barchart />}
+                {idx === 3 && <Barchart />}
               </>
             </Card>
           </div>
