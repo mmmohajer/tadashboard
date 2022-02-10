@@ -1,13 +1,18 @@
-import React ,{useState,Component} from "react";
+import React, { useState, Component } from "react";
 import cx from "classnames";
 import styles from "./Charts.module.scss";
 import Card from "Components/Card";
-import Barchart from "../Chartload/Barchart";
-import { InspectionMethodsStatus,VIStatus,VEStatus,UTStatus} from "../Chartload/Chartdata";
-import { Doughnut , Bar , Pie , Line } from 'react-chartjs-2';
+import Barchart from "Components/Chartload/AppChart";
+import {
+  InspectionMethodsStatus,
+  VIStatus,
+  VEStatus,
+  UTStatus,
+} from "Components/Chartload/AppData";
+import { Doughnut, Bar, Pie, Line } from "react-chartjs-2";
 import { cardContents } from "./utils";
 
-function Charts () {
+function Charts() {
   const [charttype, setCharttype] = useState("Bar");
   return (
     <>
@@ -21,15 +26,16 @@ function Charts () {
               cardFooter={content.Footer}
             >
               <>
-                {idx === 0 && <Barchart charttype={"Bar"} data={InspectionMethodsStatus}/>}
-                {idx === 1 && <Barchart charttype={"Bar"} data={VIStatus}/>}
-                {idx === 2 && <Barchart charttype={"Bar"}data={VEStatus}/>}
-                {idx === 3 && <Barchart charttype={"Bar"} data={UTStatus}/>}
+                {idx === 0 && (
+                  <Barchart charttype={"Bar"} data={InspectionMethodsStatus} />
+                )}
+                {idx === 1 && <Barchart charttype={"Bar"} data={VIStatus} />}
+                {idx === 2 && <Barchart charttype={"Bar"} data={VEStatus} />}
+                {idx === 3 && <Barchart charttype={"Bar"} data={UTStatus} />}
               </>
             </Card>
           </div>
         ))}
-       
       </div>
     </>
   );
