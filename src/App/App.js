@@ -5,7 +5,7 @@ import styles from "./App.module.scss";
 
 import Header from "Components/Header";
 import AdminNav from "Components/AdminNav";
-import Charts from "Components/Charts";
+// import Charts from "Components/Charts";
 import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
 import NavOpener from "Components/AdminNav/NavOpener";
@@ -19,7 +19,7 @@ const App = () => {
       <AdminNav setFrame={setFrame} />
       <div className="rightSideContainer" id="righSideContainer">
         {frame === "Dashboard" && <Dashboard />}
-        {frame === "Charts" && <Charts />}
+        {/* {frame === "Charts" && <Charts />} */}
         {frame === "Datatable" && <Datatable />}
       </div>
       <NavOpener />
