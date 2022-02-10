@@ -12,31 +12,15 @@ import NavOpener from "Components/AdminNav/NavOpener";
 
 const App = () => {
   
-  
-
   const [frame, setFrame] = useState("Dashboard");
-  
-
 
   return (
     <>
-<<<<<<< HEAD
-      <div className="flex w-per-100">
-        <div className="w-per-20 bgBlack height-vh-full">
-          <AdminNav setFrame={setFrame} />
-        </div>
-        <div className="w-per-80">
-          {frame === "Dashboard" && <Dashboard />}
-          {frame === "Charts" && <Charts />}
-          {frame === "Datatable" && <Datatable />}
-        </div>
-=======
       <AdminNav setFrame={setFrame} />
       <div className="rightSideContainer" id="righSideContainer">
         {frame === "Dashboard" && <Dashboard />}
         {frame === "Charts" && <Charts />}
         {frame === "Datatable" && <Datatable />}
->>>>>>> 817d6ec94d37b6b1149d3e7645418aee607bf007
       </div>
       <NavOpener />
     </>

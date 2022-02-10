@@ -20,7 +20,7 @@ function Generaldata() {
                 {item}
               </div>
               <div className="row--12 row--sm--12 row--md--8 row--lg--8">
-                <input className="w-per-100 br-rad-px-5" type="text" />
+                <input className={"w-per-100 br-rad-px-5",cx(styles.formcontrol)} type="text" />
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@ function Generaldata() {
                 {item}
               </div>
               <div className="row--12 row--sm--12 row--md--8 row--lg--8">
-                <input className="w-per-100 br-rad-px-5" type="text" />
+                <input className={"w-per-100 br-rad-px-5",cx(styles.formcontrol)} type="text" />
               </div>
             </div>
           </div>

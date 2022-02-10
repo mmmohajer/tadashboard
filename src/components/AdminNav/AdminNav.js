@@ -11,19 +11,6 @@ const menuList = ["Dashboard", "Charts", "Datatable"];
 function AdminNav({ setFrame }) {
   return (
     <>
-<<<<<<< HEAD
-      <div className="w-per-20 bgSpecialblue height-vh-full pos-fix flex flex--dir--col flex--jc--start textWhite of-y-auto">
-        <div className="p2 f-b fs-px-26">
-          CNRL TA  Dahboard
-        </div>
-        {menuList.map((item, idx) => (
-          <div
-            key={idx}
-            className="p2 f-b mouse-hand w-per-100 hover-text-primary"
-            onClick={() => setFrame(item)}
-          >
-            {item}
-=======
       <div
         className="w-px-200 bgSpecialblue height-vh-full pos-fix flex flex--dir--col flex--jc--between textWhite of-y-auto of-x-auto adminNavContainer"
         id="adminNavContainer"
@@ -48,11 +35,10 @@ function AdminNav({ setFrame }) {
             className="w-px-30 height-px-30 bgSilver mb2 br-rad-per-50 flex flex--jc--center flex--ai--center textBlack mouse-hand"
             onClick={closeAdminNav}
           >
-            {">"}
+           
           </div>
           <div className="bgSilver w-per-100 text-center p1 textBlack">
             Login as admin
->>>>>>> 817d6ec94d37b6b1149d3e7645418aee607bf007
           </div>
         </div>
       </div>

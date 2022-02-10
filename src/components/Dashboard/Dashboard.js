@@ -1,7 +1,8 @@
 import React from "react";
 import cx from "classnames";
 import Card from "Components/Card";
-import Barchart from "Components/Charts/Barchart";
+import Barchart from "Components/Chartload/Barchart";
+import { InspectionMethodsStatus,VIStatus,VEStatus,UTStatus} from "Components/Chartload/ChartData";
 import { cardContents1 } from "./utils";
 
 function dashboard() {
@@ -18,10 +19,10 @@ function dashboard() {
               cardFooter={content.Footer}
             >
               <>
-              {idx === 0 && <Barchart />}
-                {idx === 1 && <Barchart />}
-                {idx === 2 && <Barchart />}
-                {idx === 3 && <Barchart />}
+                {idx === 0 && <Barchart charttype={"Pie"} data={InspectionMethodsStatus}/>}
+                {idx === 1 && <Barchart charttype={"Pie"} data={VIStatus}/>}
+                {idx === 2 && <Barchart charttype={"Pie"} data={VEStatus}/>}
+                {idx === 3 && <Barchart charttype={"Pie"} data={UTStatus}/>}
               </>
             </Card>
           </div>
