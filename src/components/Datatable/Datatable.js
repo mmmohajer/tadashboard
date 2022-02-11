@@ -2,7 +2,7 @@ import React from "react";
 import { useTable } from "react-table";
 import cx from "classnames";
 import Dataform from "Components/Dataform";
-import Table from "Components/Table/Table.js";
+import Table from "Components/Table";
 
 function Datatable(){
    
