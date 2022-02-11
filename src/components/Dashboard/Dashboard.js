@@ -3,6 +3,7 @@ import cx from "classnames";
 import Card from "Components/Card";
 import Appchart from "Components/Chartload/AppChart";
 import {
+  Barchartoptions,
   InspectionMethodsStatus,
   VIStatus,
   VEStatus,
@@ -24,9 +25,7 @@ function dashboard() {
               cardFooter={content.Footer}
             >
               <div className="w-max-px-400 ml-auto mr-auto">
-                {idx === 0 && (
-                  <Appchart charttype={"Pie"} data={InspectionMethodsStatus} />
-                )}
+                {idx === 0 && (<Appchart charttype={"Bar"} data={InspectionMethodsStatus} options={Barchartoptions}/>)}
                 {idx === 1 && <Appchart charttype={"Pie"} data={VIStatus} />}
                 {idx === 2 && <Appchart charttype={"Pie"} data={VEStatus} />}
                 {idx === 3 && <Appchart charttype={"Pie"} data={UTStatus} />}

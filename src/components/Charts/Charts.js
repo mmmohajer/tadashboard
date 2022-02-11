@@ -2,8 +2,12 @@ import React, { useState, Component } from "react";
 import cx from "classnames";
 import styles from "./Charts.module.scss";
 import Card from "Components/Card";
-import Barchart from "Components/Chartload/AppChart";
+import Appchart from "Components/Chartload/AppChart";
+import Piechartsvg from "Images/js-images/icons/svg/piechart.svg";
+
+
 import {
+  Barchartoptions,
   InspectionMethodsStatus,
   VIStatus,
   VEStatus,
@@ -22,16 +26,15 @@ function Charts() {
           <div className="row--12 row--sm--12 row--md--6 row--lg--6 ">
             <Card
               key={idx}
+              svg={<Piechartsvg />}
               cardHeader={content.Header}
               cardFooter={content.Footer}
             >
               <div className="w-max-px-400 ml-auto mr-auto">
-                {idx === 0 && (
-                  <Barchart charttype={"Bar"} data={InspectionMethodsStatus} />
-                )}
-                {idx === 1 && <Barchart charttype={"Bar"} data={VIStatus} />}
-                {idx === 2 && <Barchart charttype={"Bar"} data={VEStatus} />}
-                {idx === 3 && <Barchart charttype={"Bar"} data={UTStatus} />}
+                {idx === 0 && <Appchart charttype={"Bar"} data={InspectionMethodsStatus} options={Barchartoptions} />}
+                {idx === 1 && <Appchart charttype={"Pie"} data={VIStatus} />}
+                {idx === 2 && <Appchart charttype={"Pie"} data={VEStatus} />}
+                {idx === 3 && <Appchart charttype={"Pie"} data={UTStatus} />}
               </div>
             </Card>
           </div>

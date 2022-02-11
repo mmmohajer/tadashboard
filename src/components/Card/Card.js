@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import styles from "./Card.module.scss";
 
-function Card({ children, cardHeader, cardFooter }) {
+function Card({ children,svg, cardHeader, cardFooter }) {
   return (
     <div
       className={cx(
@@ -25,6 +25,8 @@ function Card({ children, cardHeader, cardFooter }) {
           styles.cardheader
         )}
       >
+        {svg}
+       
         {cardHeader}
       </div>
       <div className={cx("p2", styles.cardbody)}>{children}</div>

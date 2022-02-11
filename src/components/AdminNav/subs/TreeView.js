@@ -1,6 +1,39 @@
 import React from "react";
 
 const years = ["2022", "2023"];
+
+// const Districts=[
+//   {id:1,
+//   'name':'GP Central',
+//   'year':'2022'},
+//   {id:2,
+//   'name':'MEDICINE HAT',
+//   'year':'2023'},
+//   {id:3,
+//   'name':'FSJ North',
+//   'year':'2023'},
+// ]
+
+// const Fields=[
+//   {id:1,
+//     'name':'TEEPEE GAS 1885',
+//     'year':'2022',
+//     'District_id':1 },
+//     {id:2,
+//     'name':'PUSKWA',
+//     'year':'2022',
+//     'District_id':1 },
+//     {id:3,
+//     'name':'HAYS 1131',
+//     'year':'2023',
+//     'District_id':2 },
+//     {id:3,
+//       'name':'WEST STODDART',
+//       'year':'2023',
+//       'District_id':3 }
+// ]
+
+
 const Districts = { 2022: ["GPCentral"], 2023: ["MEDICINEHAT","FSJNorth"] };
 const Fields = {
   GPCentral: ["TEEPEEGAS1885", "PUSKWA"],

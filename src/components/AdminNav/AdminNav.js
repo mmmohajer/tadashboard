@@ -10,6 +10,9 @@ import LeftArrow from "Images/js-images/icons/svg/leftArrow.svg";
 import { Scale } from "chart.js";
 
 const menuList = ["Dashboard", "Charts", "Datatable"];
+import Chart from "Images/js-images/icons/svg/chart.svg";
+import Dashboard from "Images/js-images/icons/svg/dashboard.svg";
+import Datatable from "Images/js-images/icons/svg/datatable.svg";
 
 function AdminNav({ setFrame }) {
   return (
@@ -19,12 +22,17 @@ function AdminNav({ setFrame }) {
         id="adminNavContainer"
       >
         <div>
+        
           {menuList.map((item, idx) => (
             <div
+              
               key={idx}
               className="p2 f-b mouse-hand w-per-100 hover-text-primary"
               onClick={() => setFrame(item)}
             >
+              {item === "Dashboard" && <Dashboard />}
+              {item === "Charts" && <Chart />}
+              {item === "Datatable" && <Datatable />}
               {item}
             </div>
           ))}

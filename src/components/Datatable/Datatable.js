@@ -2,18 +2,18 @@ import React from "react";
 import { useTable } from "react-table";
 import cx from "classnames";
 import Dataform from "Components/Dataform";
-import Table from "Components/Table";
+import Table from "Components/Table/Table.js";
 
 function Datatable(){
    
      return (
   
     <>
-    <div>
+    <div >
     <h1 class="p2 mt-4">Datatable</h1>
     </div>
     
-        <div>
+        <div >
             <Table />
             <Dataform />
         </div>

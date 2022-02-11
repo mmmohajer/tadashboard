@@ -11,7 +11,7 @@ import Dashboard from "Components/Dashboard";
 import NavOpener from "Components/AdminNav/NavOpener";
 
 const App = () => {
-  const [frame, setFrame] = useState("Dashboard");
+  const [frame, setFrame] = useState("Datatable");
 
   return (
     <>
