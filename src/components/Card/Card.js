@@ -11,6 +11,7 @@ function Card({ children,svg, cardHeader, cardFooter }) {
         "flex--dir--col",
         "bgWhite br-all-solid-1",
         "m1",
+        "height-vh-half",
         styles.card
       )}
     >
@@ -22,11 +23,11 @@ function Card({ children,svg, cardHeader, cardFooter }) {
           "pr2",
           "mb0",
           "br-bottom-solid-1",
+         
           styles.cardheader
         )}
       >
         {svg}
-       
         {cardHeader}
       </div>
       <div className={cx("p2", styles.cardbody)}>{children}</div>

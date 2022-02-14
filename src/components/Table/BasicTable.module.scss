@@ -12,6 +12,23 @@ $bgColor: rgba(0, 0, 0, 0.03);
   border-radius: 0.25rem;
 }
 
+.formcontrol {
+  display: flex;
+  // width: 20%;
+
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -32,10 +49,12 @@ table tr:hover {
   background-color: #ddd;
 }
 
-table th {
+table th,
+tfoot td {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #3380f3;
-  color: white;
+  border-bottom: 2px solid rgb(10, 10, 10);
+  background-color: #0072bc;
+  color: rgb(252, 247, 247);
 }
