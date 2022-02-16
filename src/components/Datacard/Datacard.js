@@ -6,7 +6,7 @@ function Datacard({ children, cardHeader, cardFooter }) {
   return (
     <div
       className={cx(
-        "pos-rel",
+        // "pos-rel",
         "flex",
         "flex--dir--col",
         "bgWhite br-all-solid-1",
@@ -15,20 +15,12 @@ function Datacard({ children, cardHeader, cardFooter }) {
         styles.datacard
       )}
     >
-      <div
-        className={cx(
-          "pt1",
-          "pb1",
-          "pl2",
-          "pr2",
-          "mb0",
-          "br-bottom-solid-1",
-          styles.datacardheader
-        )}
-      >
+      <div className={cx("pt1","pb1","pl2","pr2","mb0","br-bottom-solid-1",styles.datacardheader)}>
         {cardHeader}
       </div>
+
       <div className={cx("p2", styles.cardbody)}>{children}</div>
+
     </div>
   );
 }

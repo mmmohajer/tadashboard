@@ -6,7 +6,7 @@ function Card({ children,svg, cardHeader, cardFooter }) {
   return (
     <div
       className={cx(
-        "pos-rel",
+        // "pos-rel",
         "flex",
         "flex--dir--col",
         "bgWhite br-all-solid-1",
@@ -30,8 +30,8 @@ function Card({ children,svg, cardHeader, cardFooter }) {
         {svg}
         {cardHeader}
       </div>
-      <div className={cx("p2", styles.cardbody)}>{children}</div>
-      <div
+      <div className={cx("p1", styles.cardbody)}>{children}</div>
+      {/* <div
         className={cx(
           "pt1",
           "pb1",
@@ -42,7 +42,7 @@ function Card({ children,svg, cardHeader, cardFooter }) {
         )}
       >
         {cardFooter}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,21 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 import { useTable } from "react-table";
 import cx from "classnames";
 import Dataform from "Components/Dataform";
 import Table from "Components/Table";
 
-function Datatable(){
-   
+function Datatable({year,district,field}){
+    const [rowdata,SetRowdata]=useState("") 
      return (
   
     <>
     <div >
-    <h1 class="p2 mt-4">Datatable</h1>
+        <h1 className="p1 mt-4">Datatable</h1>
+        <div className="row ml2 mt-4">
+        {year}  {"/"} {district} {"/"} {field}
+        </div>
+       
     </div>
     
         <div >
-            <Table />
-            <Dataform />
+            <Table SetRowdata={SetRowdata} />
+            <Dataform rowdata={rowdata}/>
         </div>
     </>
        

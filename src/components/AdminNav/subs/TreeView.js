@@ -1,4 +1,12 @@
 import React from "react";
+import Calender from "Images/js-images/icons/svg/calender.svg";
+import Cretright from "Images/js-images/icons/svg/caretright.svg";
+import Cretdown from "Images/js-images/icons/svg/caretdown.svg";
+import Dashboard from "Components/Dashboard";
+import dashboard from "../../Dashboard/Dashboard";
+import cx from "classnames"
+import  "../AdminNav.module.scss";
+// import styles from "../AdminNav.module.scss";
 
 const years = ["2022", "2023"];
 
@@ -50,34 +58,60 @@ const Fields = {
 //   plant7: ["location13", "location14"],
 //   plant8: ["location15", "location16"],
 // };
-function TreeView() {
-  const treeViewParentClickHandler = (e) => {
+
+;
+
+function TreeView({setYear,setDistrict,setField}) {
+  const treeViewYearClickHandler = (e) => {
     e.target.nextElementSibling.classList.toggle("no-display");
+    setYear(e.target.getAttribute("data-value"));
+    setDistrict("");
+    setField("");
+  };
+
+  const treeViewDistrictClickHandler = (e) => {
+    e.target.nextElementSibling.classList.toggle("no-display");
+    setDistrict(e.target.getAttribute("data-value"));
+    setField("");
+  };
+
+  const treeViewFieldClickHandler = (e) => {
+    // e.target.nextElementSibling.classList.toggle("no-display");
+    setField(e.target.getAttribute("data-value"));
   };
 
   return (
     <div className=" w-per-100">
       {years.map((year, yearIdx) => (
         <div key={yearIdx} className="">
-          <div className="p1 w-per-100 mouse-hand hover-text-primary" onClick={treeViewParentClickHandler}>
+          <div 
+          className="p1 w-per-100 mouse-hand hover-text-primary treeviewnode" 
+          onClick={treeViewYearClickHandler} 
+          data-value={year}
+          >
+          {<Calender  className="mr1"/>}
             {year}
           </div>
-          <div className="no-display mouse-hand hover-text-primary">
+          <div className="no-display mouse-hand ">
             {Districts[year].map((district, districtIdx) => (
               <div key={districtIdx} className="">
                 <div
                   className="ml2 mb1 mouse-hand hover-text-primary"
-                  onClick={treeViewParentClickHandler}
+                  onClick={treeViewDistrictClickHandler}
+                  data-value={district}
                 >
+                   {<Cretright/>}
                   {district}
                 </div>
                 <div className="no-display">
                   {Fields[district].map((field, fieldIdx) => (
                     <div key={fieldIdx} className="">
                       <div
-                        className="ml4 mb1 mouse-hand"
-                        onClick={treeViewParentClickHandler}
+                        className="ml4 mb1 mouse-hand hover-text-primary"
+                        onClick={treeViewFieldClickHandler}
+                        data-value={field}
                       >
+                         {<Cretright />}
                         {field}
                       </div>
                       {/* <div className="no-display">

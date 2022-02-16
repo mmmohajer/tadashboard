@@ -2,7 +2,7 @@ import React ,{Component} from "react";
 import cx from "classnames";
 import styles from "./Dataform.module.scss";
 
-function History() {
+function History({rowdata}) {
     return (
         <>
        <div >

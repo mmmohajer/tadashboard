@@ -93,3 +93,9 @@
     max-height: 66.66666666vh;
   }
 }
+
+@each $val in $widthPercentages {
+  .h-per-#{$val} {
+    width: percentage(math.div($val, 100));
+  }
+}

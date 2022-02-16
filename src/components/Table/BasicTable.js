@@ -1,4 +1,4 @@
-import React ,{useMemo} from "react";
+import React ,{useMemo, useEffect ,useState} from "react";
 import { useTable,useSortBy,useGlobalFilter,useFilters,usePagination,useRowSelect,useBlockLayout } from "react-table";
 import MOCK_DATA from './MOCK_DATA.json'
 import {COLUMNS,GROUPED_COLUMMNS} from './columns'
@@ -9,11 +9,14 @@ import GlobalFilter from "./GlobalFilter.js";
 import ColumnFilter  from './ColumnFilter'
 import { Checkbox } from './Checkbox';
 import { useSticky } from "react-table-sticky";
+import { updateInputvalues } from "Utils/adminNavToggleHandler";
 
 
 
- const BasicTable=()=>{
-    const columns=useMemo(()=>COLUMNS,[])
+
+ const BasicTable=({SetRowdata})=>{
+   
+    const columns=useMemo(()=>GROUPED_COLUMMNS,[])
     const data=useMemo(()=>MOCK_DATA,[]) 
 
     const defaultColumn = React.useMemo(
@@ -48,9 +51,9 @@ import { useSticky } from "react-table-sticky";
         hooks.visibleColumns.push(columns => [
           {
             id: 'selection',
-            // Header: ({ getToggleAllRowsSelectedProps }) => (
-            //   <Checkbox {...getToggleAllRowsSelectedProps()} />
-            // ),
+            Header: ({ getToggleAllRowsSelectedProps }) => (
+              <label>Edit</label> 
+            ),
             Cell: ({ row }) => <Checkbox {...row.getToggleRowSelectedProps()} />
           },
           ...columns
@@ -60,12 +63,18 @@ import { useSticky } from "react-table-sticky";
     
     const {pageIndex,pageSize}=state
     const {globalFilter}=state
+
+    useEffect(() => {
+        if (selectedFlatRows && selectedFlatRows[0])
+        SetRowdata(selectedFlatRows[0]?.original)
+        // updateInputvalues(selectedFlatRows[0]?.original);
+    }, [selectedFlatRows])
    
 
     return (
-    <div className="p2 pt6 row row--12 row--sm--12 row--md--12 row--lg--12">
+    <div className="p2  row row--12 row--sm--12 row--md--12 row--lg--12">
         <div className={cx(
-        "pos-rel",
+        // "pos-rel",
         "flex",
         "flex--dir--col",
         "bgWhite br-all-solid-1",
@@ -73,18 +82,29 @@ import { useSticky } from "react-table-sticky";
         "of-x-auto",
         styles.tablecard
       )}>
-        <select className={cx(styles.formcontrol)} value={pageSize} onChange={e=>setPageSize(Number(e.target.value))}>
-                {
-                  [5,10,25,50,100].map(pageSize=>(
-                    <option key={pageSize} value={pageSize}>
-                          Show {pageSize} 
-                    </option>
-                  ))  
-                }
+        <div className="row flex flex--jc-between m1">
+       
+        <div className="row--12 row--sm--12 row--md--10 row--lg--10">
+            <select className={cx(styles.formcontrol)} value={pageSize} onChange={e=>setPageSize(Number(e.target.value))}>
+                    {
+                    [5,10,25,50,100].map(pageSize=>(
+                        <option key={pageSize} value={pageSize}>
+                            Show {pageSize} 
+                        </option>
+                    ))  
+                    }
 
-        </select> 
-        <p>entries per page</p>
-        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+            </select>
+            <p1 >entries per page</p1>
+        </div>
+        
+            
+        
+       
+        <div>
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} className="row"/>
+        </div>
+        </div>
 
         <table className="mb2" {...getTableProps()} >
             <thead>
@@ -139,17 +159,8 @@ import { useSticky } from "react-table-sticky";
             </tfoot>
 
         </table>
-        <pre>
-        <code>
-          {JSON.stringify(
-            {
-              selectedFlatRows: selectedFlatRows.map(row => row.original)
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre>
+        
+        
 
         <div className="ml2 mb2">
 
@@ -169,11 +180,12 @@ import { useSticky } from "react-table-sticky";
                 style={{width:'50px'}}></input>
             </span> */}
             
-            
+            <div className="row">
             <button className={cx(styles.formcontrol)} onClick={()=>gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
-            <button onClick={()=>previousPage()} disabled={!canPreviousPage}>Previous</button>
-            <button onClick={()=>nextPage()} disabled={!canNextPage}>Next</button>
-            <button onClick={()=>gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
+            <button className={cx(styles.formcontrol)} onClick={()=>previousPage()} disabled={!canPreviousPage}>Previous</button>
+            <button className={cx(styles.formcontrol)} onClick={()=>nextPage()} disabled={!canNextPage}>Next</button>
+            <button className={cx(styles.formcontrol)} onClick={()=>gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
+            </div>
             <pre>
        
       </pre>

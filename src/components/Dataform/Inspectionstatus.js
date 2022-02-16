@@ -14,7 +14,7 @@ const importantdates = [
   "Opening Date",
 ];
 
-function Inspectionstatus() {
+function Inspectionstatus({rowdata}) {
   return (
     <>
       <div className="row mb1 flex--ai--center">
@@ -34,13 +34,13 @@ function Inspectionstatus() {
       </div>
 
       {importantdates.map((item1, idx1) => (
-        <div className="row mb1 flex--ai--center">
-          <div class="row--12 row--sm--12 row--md--4 row--lg--4">
-            <label for={item1}>{item1}</label>
+        <div key={idx1} className="row mb1 flex--ai--center">
+          <div className="row--12 row--sm--12 row--md--4 row--lg--4">
+            <label  for={item1}>{item1}</label>
           </div>
-          <div class="row--12 row--sm--12 row--md--4 row--lg--4">
+          <div className="row--12 row--sm--12 row--md--4 row--lg--4">
             <input
-              key={idx1}
+              
               className={cx(styles.formcontrol, "p1")}
               type="Date"
             ></input>

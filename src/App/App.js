@@ -9,19 +9,29 @@ import Charts from "Components/Charts";
 import Datatable from "Components/Datatable";
 import Dashboard from "Components/Dashboard";
 import NavOpener from "Components/AdminNav/NavOpener";
+import Login from "Components/Login";
 
 const App = () => {
-  const [frame, setFrame] = useState("Datatable");
+  const [frame, setFrame] = useState("Dashboard");
+  const [Route,setRoute]=useState("login");
+  const [year,setYear]=useState("");
+  const [district,setDistrict]=useState("");
+  const [field,setField]=useState("");
 
   return (
     <>
-      <AdminNav setFrame={setFrame} />
+   
+    {Route==="login" && <Login setRoute={setRoute}/>}
+    {Route==="loggedin" && <>
+      <Header setRoute={setRoute}/>
+      <AdminNav setFrame={setFrame} setYear={setYear} setDistrict={setDistrict} setField={setField}/>
       <div className="rightSideContainer" id="righSideContainer">
-        {frame === "Dashboard" && <Dashboard />}
-        {frame === "Charts" && <Charts />}
-        {frame === "Datatable" && <Datatable />}
+        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field}/>}
+        {frame === "Charts" && <Charts year={year} district={district} field={field}/>}
+        {frame === "Datatable" && <Datatable year={year} district={district} field={field}/>}
       </div>
-      <NavOpener />
+      
+      </>}
     </>
   );
 };

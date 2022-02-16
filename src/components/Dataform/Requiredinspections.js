@@ -20,22 +20,22 @@ const inspectionmethods = [
   "Hydrotest",
 ];
 
-function Requiredinspections() {
+function Requiredinspections({rowdata}) {
   return (
     <div className={cx(styles.inspectionCardContainer)}>
-      <div class="row mb1">
-        <div class="col-sm-2">Inspection Method</div>
-        <div class="col-sm-3  ml1">Scope</div>
-        <div class="col-sm-1_5  ml1">Status</div>
-        <div class="col-sm-2  ml1">Completion Date</div>
-        <div class="col-sm-3  ml1">Note</div>
+      <div className="row mb1">
+        <div className="col-sm-2">Inspection Method</div>
+        <div className="col-sm-3  ml1">Scope</div>
+        <div className="col-sm-1_5  ml1">Status</div>
+        <div className="col-sm-2  ml1">Completion Date</div>
+        <div className="col-sm-3  ml1">Note</div>
       </div>
       <hr></hr>
       <br></br>
       {inspectionmethods.map((item, idx) => (
-        <div class="row mb1 flex--jc--center flex--ai--center">
+        <div key={idx} className="row mb1 flex--jc--center flex--ai--center">
           <div className="col-sm-2">
-            <input key={idx} type="checkbox"></input>
+            <input  type="checkbox"></input>
             <label className="ml1" for="VE">
               {item}
             </label>
@@ -43,7 +43,7 @@ function Requiredinspections() {
 
           <div className="col-sm-3 ml1">
             <input
-              class={cx(styles.formcontrol)}
+              className={cx(styles.formcontrol)}
               type="text"
               id="VIdes"
               name="VI"

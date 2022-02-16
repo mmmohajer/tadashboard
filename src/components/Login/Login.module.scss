@@ -1,29 +1,29 @@
-.fullWindow {
-  height: 100vh;
-  width: 100vh;
-  z-index: 10;
-  background-color: #ccc;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.4;
+.container {
+  background-image: url("Images/css-images/222.jpg");
+  background-color: rgb(77, 67, 67);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
 }
 
-.header {
-  background-color: #e8f0fe;
-  height: 4rem;
-  border-bottom: 3px #2996cc solid;
+.formcontainer {
+  background-color: #f1f7fd;
+  background-size: cover;
+  border-radius: 0.25rem;
+  border-color: rgba(0, 0, 0, 0.125);
+  opacity: 1;
 }
 
-.formbutton {
+.formtext {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.375rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #ebeff3;
-  background-color: #2996cc;
+  color: #212529;
+  background-color: #e8f0fe;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   appearance: none;
@@ -31,10 +31,15 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.listbutton {
+.formtext :hover {
+  border: 1px solid #013263;
+  background-color: yellow;
+}
+
+.formbutton {
   display: block;
-  width: 5%;
-  padding: 0rem 0rem;
+  width: 50%;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
