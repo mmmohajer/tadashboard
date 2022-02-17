@@ -1,6 +1,6 @@
-import React, { useState, Component } from "react";
+import React, { useState,useEffect, Component } from "react";
 import cx from "classnames";
-
+import axios from "axios";
 import styles from "./App.module.scss";
 
 import Header from "Components/Header";
@@ -12,11 +12,27 @@ import NavOpener from "Components/AdminNav/NavOpener";
 import Login from "Components/Login";
 
 const App = () => {
+
+
+
   const [frame, setFrame] = useState("Dashboard");
   const [Route,setRoute]=useState("login");
   const [year,setYear]=useState("");
   const [district,setDistrict]=useState("");
   const [field,setField]=useState("");
+  const [alldata,setAlldata]=useState([]);
+
+  useEffect(()=>{
+    axios.get('http://localhost:5000')
+    .then(res=>{
+     
+      setAlldata(res.data)
+      console.log(res.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
+  
+  
 
   return (
     <>
@@ -34,6 +50,8 @@ const App = () => {
       </>}
     </>
   );
+
+  
 };
 
 // class App extends Component {
