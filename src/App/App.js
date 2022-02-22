@@ -16,35 +16,50 @@ const App = () => {
 
 
   const [frame, setFrame] = useState("Dashboard");
-  const [Route,setRoute]=useState("login");
-  const [year,setYear]=useState("");
-  const [district,setDistrict]=useState("");
-  const [field,setField]=useState("");
+  const [Route,setRoute]=useState("loggedin");
+  const [currentuser,setCurrentuser]=useState("User")
+  const [year,setYear]=useState(2022);
+  const [district,setDistrict]=useState(0);
+  const [field,setField]=useState(0);
   const [alldata,setAlldata]=useState([]);
+  const [graphdata,setGraphdata]=useState([]);
+ 
 
-  useEffect(()=>{
-    axios.get('http://localhost:5000')
-    .then(res=>{
+  // useEffect(()=>{
+  //   axios.post('http://localhost:5000',{year,district,field})
+  //   .then(res=>{
      
-      setAlldata(res.data)
-      console.log(res.data)
-    })
-    .catch(err=>console.log(err))
-  },[])
+  //     setAlldata(res.data)
+      
+  //   })
+  //   .catch(err=>console.log(err))
+  // },[])
+
+
+  // useEffect(()=>{
+  //   axios.post('http://localhost:5000/graph',{year,district,field})
+  //   .then(res=>{
+     
+  //     setGraphdata(res.data)
+      
+  //   })
+  //   .catch(err=>console.log(err))
+  // },[])
+  
   
   
 
   return (
     <>
    
-    {Route==="login" && <Login setRoute={setRoute}/>}
+    {Route==="login" && <Login setRoute={setRoute} setCurrentuser={setCurrentuser}/>}
     {Route==="loggedin" && <>
-      <Header setRoute={setRoute}/>
+      <Header setRoute={setRoute} currentuser={currentuser}/>
       <AdminNav setFrame={setFrame} setYear={setYear} setDistrict={setDistrict} setField={setField}/>
       <div className="rightSideContainer" id="righSideContainer">
-        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field}/>}
+        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field} graphdata={graphdata}/>}
         {frame === "Charts" && <Charts year={year} district={district} field={field}/>}
-        {frame === "Datatable" && <Datatable year={year} district={district} field={field}/>}
+        {frame === "Datatable" && <Datatable year={year} district={district} field={field} alldata={alldata}/>}
       </div>
       
       </>}

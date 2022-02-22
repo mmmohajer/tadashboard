@@ -4,7 +4,7 @@ import cx from "classnames";
 import Dataform from "Components/Dataform";
 import Table from "Components/Table";
 
-function Datatable({year,district,field}){
+function Datatable({year,district,field,alldata}){
     const [rowdata,SetRowdata]=useState("") 
      return (
   
@@ -18,7 +18,7 @@ function Datatable({year,district,field}){
     </div>
     
         <div >
-            <Table SetRowdata={SetRowdata} />
+            <Table SetRowdata={SetRowdata} alldata={alldata} />
             <Dataform rowdata={rowdata}/>
         </div>
     </>

@@ -1,11 +1,8 @@
 import React,{useState} from "react";
 import cx from "classnames";
-
 import styles from "./AdminNav.module.scss";
-
-import TreeView from "./subs/TreeView";
+import TreeView from "Components/Treeview";
 import { closeAdminNav } from "Utils/adminNavToggleHandler";
-
 import LeftArrow from "Images/js-images/icons/svg/leftArrow.svg";
 import { Scale } from "chart.js";
 
@@ -44,7 +41,11 @@ function AdminNav({ setFrame, setYear,setDistrict,setField}) {
           </div>
 
 
-          <TreeView setYear={setYear} setDistrict={setDistrict} setField={setField}/>
+          <TreeView 
+          setYear={setYear}
+           setDistrict={setDistrict}
+            setField={setField}
+             />
         </div>
 
         <div className="flex flex--dir--col flex--jc--center flex--ai--center">

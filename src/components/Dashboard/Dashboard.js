@@ -13,7 +13,7 @@ import {
 } from "Components/Chartload/AppData";
 import { cardContents1 } from "./utils";
 
-function dashboard({year,district,field}) {
+function dashboard({year,district,field,graphdata}) {
 
   return (
     <>

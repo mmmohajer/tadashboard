@@ -14,10 +14,10 @@ import { updateInputvalues } from "Utils/adminNavToggleHandler";
 
 
 
- const BasicTable=({SetRowdata})=>{
+ const BasicTable=({SetRowdata,alldata})=>{
    
     const columns=useMemo(()=>GROUPED_COLUMMNS,[])
-    const data=useMemo(()=>MOCK_DATA,[]) 
+    const data=useMemo(()=>alldata,[]) 
 
     const defaultColumn = React.useMemo(
         () => ({

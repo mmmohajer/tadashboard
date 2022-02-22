@@ -8,7 +8,7 @@ import Logo from "./subs/Logo";
 import Nav from "./subs/Nav";
 import logo from "Images/js-Images/Logo.svg"
 
-const Header = ({ NavList,setRoute }) => {
+const Header = ({ NavList,setRoute, currentuser }) => {
   return (
     <>
    
@@ -35,11 +35,15 @@ const Header = ({ NavList,setRoute }) => {
           <button className={cx(styles.listbutton,"ml2","flex--ai--center")} onClick={openAdminNav} ><Listtsvg /></button>
           <button className={cx(styles.listbutton,"flex--ai--center")} onClick={closeAdminNav}><Listtsvg /></button>
         </div>
-        <div className="flex--ai--center row--1 row--sm--1 row--md--1 row--lg--6">
+        <div className="flex--ai--center row--1 row--sm--1 row--md--2 row--lg--2">
          
         </div>
-
+      
         <div className="flex--ai--center row--1 row--sm--1 row--md--1 row--lg--1">
+        <label>{currentuser}</label>
+        </div>
+        <div className="flex--ai--center row--1 row--sm--1 row--md--1 row--lg--1">
+         
           <button className={cx(styles.formbutton)} onClick={() => setRoute("login")}>Log out</button>
         </div>
 

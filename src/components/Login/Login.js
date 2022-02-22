@@ -4,11 +4,23 @@ import styles from "./Login.module.scss"
 import axios from "axios";
 
 import logo from "Images/js-Images/Logo.svg"
-const Login=({setRoute})=>{
+
+
+const Login=({setRoute,setCurrentuser})=>{
 const [username,setUsername]=useState("")
 const [password,setPassword]=useState("")
 
 
+const logineventhandler= (e)=>{
+    e.preventDefault()
+    axios.post('http://localhost:5000/signin',{username,password})
+    .then(response=>{
+        setCurrentuser(response.data.name)
+        setRoute("loggedin")
+    })
+
+    .catch(err=>console.log(err))
+}
 
 
     return (
@@ -48,20 +60,7 @@ const [password,setPassword]=useState("")
 
         <div className="row m2 btn-large flex flex--jc--center">
                 <button className={cx(styles.formbutton)} type="submit" 
-                onClick={()=>{
-                   
-                    setRoute("loggedin")
-                    axios.post('http://localhost:5000/signin',{username,password})
-                    .then(response=>{
-                        if(response.data==='success'){
-                        }
-                            console.log(response.data)
-                         
-                        
-                    })
-
-                    .catch(err=>console.log(err))
-                }}>Log In</button>
+                onClick={logineventhandler}>Log In</button>
         </div>
             
            
