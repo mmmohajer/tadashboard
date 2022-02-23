@@ -18,29 +18,32 @@ const Districtslist = [
 
 const Fieldlist = [
   {id:1, district_id:1, field_name:'Teepee Gas 1885'},
-  {id:2, district_id:1, field_name:'PUSKWA'}];
+  {id:2, district_id:1, field_name:'PUSKWA'},
+  {id:3, district_id:2, field_name:'Hays'},];
 
 
 
 
-function TreeView({setYear,setDistrict,setField}) {
-  const [districtid,setDistrictid]=useState(1);
-  const [fieldid,setFieldid]=useState(1);
+function TreeView({setYear,setDistrict,setField,setDistrictid,setFieldid}) {
+  const [toggled,setToggled] = useState(false);
+  
 
 
   const treeViewYearClickHandler = (e) => {
     e.target.nextElementSibling.classList.toggle("no-display");
     setYear(e.target.getAttribute("data-value"));
     setDistrictid(0);
+    
     setFieldid(0);
     setDistrict("");
     setField("");
   };
 
   const treeViewDistrictClickHandler = (e) => {
-    e.target.nextElementSibling.classList.toggle("no-display");
+    e.target.nextElementSibling?.classList.toggle("no-display");
     setDistrict(e.target.getAttribute("data-value"));
     setDistrictid(e.target.getAttribute("district_id"));
+    console.log(e.target.getAttribute("data-value"))
     setField("");
     setFieldid(0);
    
@@ -53,6 +56,7 @@ function TreeView({setYear,setDistrict,setField}) {
   };
 
   return (
+
     <div className=" w-per-100">
       {years.map((year, yearIdx) => (
         <div key={yearIdx} className="">
@@ -64,7 +68,7 @@ function TreeView({setYear,setDistrict,setField}) {
             {<Calender  className="mr1"/>}
             {year}
           </div>
-        <div className="no-display mouse-hand ">
+        <div className="no-display mouse-hand hover-text-primary">
             {Districtslist.map((item) => (
               <>
               {Number(item.ta_year) === Number(year) && (
@@ -82,9 +86,9 @@ function TreeView({setYear,setDistrict,setField}) {
                     {Fieldlist.map((item1) => (
                       <>
                       {Number(item1.district_id) === Number(item.id) && (
-                      <div  className="">
+                      <div  className=""  key={item1.id}>
                         <div
-                          key={item1.id}
+                         
                           className="ml4 mb1 mouse-hand hover-text-primary"
                           onClick={treeViewFieldClickHandler}
                           data-value={item1.field_name}

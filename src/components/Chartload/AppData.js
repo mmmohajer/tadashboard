@@ -1,12 +1,24 @@
 import { getMarginRight } from "react-table-sticky";
 
-const inspectionstatus_labels=["Innitiated", "Not Started", "Canceled", "Completed"];
+const inspectionstatus_labels=["Completed", "Canceled", "Started", "Not Started"];
 const assettype_labels=["Vessel", "Column", "Filter", "Exchanger","Air Cooler","Compressor Bottle","Reboiler","Heater"];
 const inspectionmethods_labels=["VE","VI","UT","AUT","Ex. MT","Int. MT","PT","Tublar","Hydrotest"];
 const charttitles=["InspectionMethodsStatus", "VIStatus", "VEStatus", "UTStatus"];
 const backgroundcolors=['#007bff', '#dc3545', '#ffc107', '#28a745'];
 
-const inspectionstatusdata=[{label:"Innitiated",count:"5"},{label:"Not Started",count:"4"},{label:"Canceled",count:"6"},{label:"Completed",count:"9"}]
+const insmethod_status_data=[
+  {Inspection_Method:"Overal Inspection",Total_Required:"6",Completed:"5",Canceled:"6",Started:"6",Not_Started:"8"},
+  {Inspection_Method:"VI",Total_Required:"6",Completed:"5",Canceled:"6",Started:"6",Not_Started:"8"},
+  {Inspection_Method:"VE",Total_Required:"6",Completed:"5",Canceled:"6",Started:"6",Not_Started:"8"},
+  {Inspection_Method:"UT",Total_Required:"6",Completed:"5",Canceled:"6",Started:"6",Not_Started:"8"}
+ ]
+ const overal_inspection=insmethod_status_data.find(c=>c.Inspection_Method==='Overal Inspection');
+ const overal_inspection_index=0;
+
+ const VI=insmethod_status_data.find(c=>c.Inspection_Method==='VI');
+//  const VIindex=insmethod_status_data.indexof(VI);
+ const VIindex=1;
+
 
 export const Barchartoptions= {
   scales: {
@@ -91,11 +103,15 @@ export const InspectionMethodsStatus={
   };
 
   export const OveralInspectionStatus={
-    labels: [inspectionstatusdata[0].label, inspectionstatusdata[1].label, inspectionstatusdata[2].label, inspectionstatusdata[3].label],
+    labels: inspectionstatus_labels,
     datasets:[
       {
         label:"",
-        data:[inspectionstatusdata[0].count, inspectionstatusdata[1].count, inspectionstatusdata[2].count, inspectionstatusdata[3].count],
+        data:
+        [insmethod_status_data[overal_inspection_index].Completed,
+        insmethod_status_data[overal_inspection_index].Canceled,
+        insmethod_status_data[overal_inspection_index].Started,
+        insmethod_status_data[overal_inspection_index].Not_Started],
         backgroundColor: backgroundcolors,
       }
     ]
@@ -115,11 +131,16 @@ export const InspectionMethodsStatus={
 
 
   export const VIStatus={
+
     labels: inspectionstatus_labels,
     datasets:[
       {
         label:"",
-        data:[50, 14, 20, 15],
+        data:[
+        insmethod_status_data[VIindex].Completed,
+        insmethod_status_data[VIindex].Canceled,
+        insmethod_status_data[VIindex].Started,
+        insmethod_status_data[VIindex].Not_Started],
         backgroundColor: backgroundcolors,
       }
     ]

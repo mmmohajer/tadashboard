@@ -19,32 +19,39 @@ const App = () => {
   const [Route,setRoute]=useState("loggedin");
   const [currentuser,setCurrentuser]=useState("User")
   const [year,setYear]=useState(2022);
-  const [district,setDistrict]=useState(0);
-  const [field,setField]=useState(0);
+  const [district,setDistrict]=useState("");
+  const [field,setField]=useState("");
   const [alldata,setAlldata]=useState([]);
-  const [graphdata,setGraphdata]=useState([]);
- 
+  const [insmethoddata,setInsmethoddata]=useState([]);
+  const [assettypedata,setAssettypedata]=useState([]);
+  const [districtid,setDistrictid]=useState(0);
+  const [fieldid,setFieldid]=useState(0);
 
-  // useEffect(()=>{
-  //   axios.post('http://localhost:5000',{year,district,field})
-  //   .then(res=>{
-     
-  //     setAlldata(res.data)
-      
-  //   })
-  //   .catch(err=>console.log(err))
-  // },[])
+  useEffect(()=>{
+   
+    axios.post('http://localhost:5000',{year,districtid,fieldid})
+    .then(res=>{
+      setAlldata(res.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
 
 
-  // useEffect(()=>{
-  //   axios.post('http://localhost:5000/graph',{year,district,field})
-  //   .then(res=>{
-     
-  //     setGraphdata(res.data)
-      
-  //   })
-  //   .catch(err=>console.log(err))
-  // },[])
+  useEffect(()=>{
+    axios.post('http://localhost:5000/insmethoddata',{year,districtid,fieldid})
+    .then(res=>{
+      setInsmethoddata(res.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
+
+  useEffect(()=>{
+    axios.post('http://localhost:5000/assettypedata',{year,districtid,fieldid})
+    .then(res=>{
+      setAssettypedata(res.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
   
   
   
@@ -55,9 +62,9 @@ const App = () => {
     {Route==="login" && <Login setRoute={setRoute} setCurrentuser={setCurrentuser}/>}
     {Route==="loggedin" && <>
       <Header setRoute={setRoute} currentuser={currentuser}/>
-      <AdminNav setFrame={setFrame} setYear={setYear} setDistrict={setDistrict} setField={setField}/>
+      <AdminNav setFrame={setFrame} setYear={setYear} setDistrict={setDistrict} setField={setField} setDistrictid={setDistrictid} setFieldid={setFieldid}/>
       <div className="rightSideContainer" id="righSideContainer">
-        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field} graphdata={graphdata}/>}
+        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field} graphdata={insmethoddata}/>}
         {frame === "Charts" && <Charts year={year} district={district} field={field}/>}
         {frame === "Datatable" && <Datatable year={year} district={district} field={field} alldata={alldata}/>}
       </div>

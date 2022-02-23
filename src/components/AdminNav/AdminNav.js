@@ -12,7 +12,7 @@ import Dashboardsvg from "Images/js-images/icons/svg/dashboard.svg";
 import Datatablesvg from "Images/js-images/icons/svg/datatable.svg";
 
 
-function AdminNav({ setFrame, setYear,setDistrict,setField}) {
+function AdminNav({ setFrame, setYear,setDistrict,setField,setDistrictid,setFieldid}) {
   
   return (
     <>
@@ -45,6 +45,8 @@ function AdminNav({ setFrame, setYear,setDistrict,setField}) {
           setYear={setYear}
            setDistrict={setDistrict}
             setField={setField}
+            setDistrictid={setDistrictid}
+            setFieldid={setFieldid}
              />
         </div>
 

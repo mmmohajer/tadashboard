@@ -27,11 +27,13 @@ const Header = ({ NavList,setRoute, currentuser }) => {
       )}
     >
       <div className="row flex--ai--center">
-        <div className=""><img src={logo} alt="CNRL LOGO" className="flex flex--jc--center height-px-40 " /></div>
+        <div className="flex--ai--center row--1 row--sm--1 row--md--1 row--lg--1">
+          <img src={logo} alt="CNRL LOGO" className="flex flex--jc--center height-px-40 " />
+          </div>
         
        
         <div className="row flex--ai--center row--6 row--sm--6 row--md--4 row--lg--4">
-        <h2 className=" f-b  flex--ai--center"> CNRL TA Dashboard</h2>
+        <h2 className=" f-b  "> CNRL TA Dashboard</h2>
           <button className={cx(styles.listbutton,"ml2","flex--ai--center")} onClick={openAdminNav} ><Listtsvg /></button>
           <button className={cx(styles.listbutton,"flex--ai--center")} onClick={closeAdminNav}><Listtsvg /></button>
         </div>
