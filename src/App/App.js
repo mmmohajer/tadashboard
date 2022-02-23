@@ -1,4 +1,4 @@
-import React, { useState,useEffect, Component } from "react";
+import React, { useState, useEffect, Component } from "react";
 import cx from "classnames";
 import axios from "axios";
 import styles from "./App.module.scss";
@@ -12,68 +12,94 @@ import NavOpener from "Components/AdminNav/NavOpener";
 import Login from "Components/Login";
 
 const App = () => {
-
-
-
   const [frame, setFrame] = useState("Dashboard");
-  const [Route,setRoute]=useState("loggedin");
-  const [currentuser,setCurrentuser]=useState("User")
-  const [year,setYear]=useState(2022);
-  const [district,setDistrict]=useState("");
-  const [field,setField]=useState("");
-  const [alldata,setAlldata]=useState([]);
-  const [insmethoddata,setInsmethoddata]=useState([]);
-  const [assettypedata,setAssettypedata]=useState([]);
-  const [districtid,setDistrictid]=useState(0);
-  const [fieldid,setFieldid]=useState(0);
+  const [Route, setRoute] = useState("loggedin");
+  const [currentuser, setCurrentuser] = useState("User");
+  const [year, setYear] = useState(2022);
+  const [district, setDistrict] = useState("");
+  const [field, setField] = useState("");
+  const [alldata, setAlldata] = useState([]);
+  const [insmethoddata, setInsmethoddata] = useState([]);
+  const [assettypedata, setAssettypedata] = useState([]);
+  const [districtid, setDistrictid] = useState(0);
+  const [fieldid, setFieldid] = useState(0);
 
-  useEffect(()=>{
-   
-    axios.post('http://localhost:5000',{year,districtid,fieldid})
-    .then(res=>{
-      setAlldata(res.data)
-    })
-    .catch(err=>console.log(err))
-  },[])
+  useEffect(() => {
+    axios
+      .post("http://localhost:5000", { year, districtid, fieldid })
+      .then((res) => {
+        setAlldata(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
+  useEffect(() => {
+    axios
+      .post("http://localhost:5000/insmethoddata", {
+        year,
+        districtid,
+        fieldid,
+      })
+      .then((res) => {
+        setInsmethoddata(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-  useEffect(()=>{
-    axios.post('http://localhost:5000/insmethoddata',{year,districtid,fieldid})
-    .then(res=>{
-      setInsmethoddata(res.data)
-    })
-    .catch(err=>console.log(err))
-  },[])
-
-  useEffect(()=>{
-    axios.post('http://localhost:5000/assettypedata',{year,districtid,fieldid})
-    .then(res=>{
-      setAssettypedata(res.data)
-    })
-    .catch(err=>console.log(err))
-  },[])
-  
-  
-  
+  useEffect(() => {
+    axios
+      .post("http://localhost:5000/assettypedata", {
+        year,
+        districtid,
+        fieldid,
+      })
+      .then((res) => {
+        setAssettypedata(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
-   
-    {Route==="login" && <Login setRoute={setRoute} setCurrentuser={setCurrentuser}/>}
-    {Route==="loggedin" && <>
-      <Header setRoute={setRoute} currentuser={currentuser}/>
-      <AdminNav setFrame={setFrame} setYear={setYear} setDistrict={setDistrict} setField={setField} setDistrictid={setDistrictid} setFieldid={setFieldid}/>
-      <div className="rightSideContainer" id="righSideContainer">
-        {frame === "Dashboard" && <Dashboard year={year} district={district} field={field} graphdata={insmethoddata}/>}
-        {frame === "Charts" && <Charts year={year} district={district} field={field}/>}
-        {frame === "Datatable" && <Datatable year={year} district={district} field={field} alldata={alldata}/>}
-      </div>
-      
-      </>}
+      {Route === "login" && (
+        <Login setRoute={setRoute} setCurrentuser={setCurrentuser} />
+      )}
+      {Route === "loggedin" && (
+        <>
+          <Header setRoute={setRoute} currentuser={currentuser} />
+          <AdminNav
+            setFrame={setFrame}
+            setYear={setYear}
+            setDistrict={setDistrict}
+            setField={setField}
+            setDistrictid={setDistrictid}
+            setFieldid={setFieldid}
+          />
+          <div className="rightSideContainer" id="righSideContainer">
+            {frame === "Dashboard" && (
+              <Dashboard
+                year={year}
+                district={district}
+                field={field}
+                graphdata={insmethoddata}
+              />
+            )}
+            {frame === "Charts" && (
+              <Charts year={year} district={district} field={field} />
+            )}
+            {frame === "Datatable" && (
+              <Datatable
+                year={year}
+                district={district}
+                field={field}
+                alldata={alldata}
+              />
+            )}
+          </div>
+        </>
+      )}
     </>
   );
-
-  
 };
 
 // class App extends Component {
